@@ -9,22 +9,31 @@ const [bmi,setBmi] = useState("");
 const [image,setImage] = useState("");
 const [message,setMessage] = useState("");
 
+let calcBmi = (event) => {
+event.preventDefault();
+if(weight === 0 || height === 0){
+  alert("please type weight and height...")
+let bmi = weight / (height * height)
+setBmi(bmi.toFixed())
+}
+}
+
 
   return (
     <div className="App">
 <div className="container">
   <h2 className="center">Bmi Calculator</h2>
-  <form>
+  <form onSubmit={calcBmi}>
     <div>
       <label>Weight (kg)</label>
-      <input value={weight} />
+      <input value={weight} onChange={(e)=>setWeight(e.target.value)} />
     </div>
     <div>
       <label>Height (cm)</label>
-      <input value={height} />
+      <input value={height} onChange={(e)=>setHeight(e.target.value)}  />
     </div>
     <div>
-      <button className="btn" type="submit">Submit</button>
+      <button className="btn" type="submit" onClick={()=> calcBmi()}>Submit</button>
       <button className="btn btn-outline" type="submit">Delete Informations</button>
     </div>
   </form>
