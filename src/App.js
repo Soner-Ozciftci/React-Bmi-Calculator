@@ -12,7 +12,24 @@ const [message,setMessage] = useState("");
 
   return (
     <div className="App">
-
+<div className="container">
+  <h2 className="center">Bmi Calculator</h2>
+  <form>
+    <div>
+      <label>Weight (kg)</label>
+      <input value={weight} />
+    </div>
+    <div>
+      <label>Height (cm)</label>
+      <input value={height} />
+    </div>
+    <div>
+      <button className="btn" type="submit">Submit</button>
+      <button className="btn btn-outline" type="submit">Delete Informations</button>
+    </div>
+  </form>
+  
+</div>
     </div>
   );
 }
