@@ -28,7 +28,13 @@ const [message,setMessage] = useState("");
       <button className="btn btn-outline" type="submit">Delete Informations</button>
     </div>
   </form>
-  
+  <div className="center">
+<h3>Your Bmi is : {bmi}</h3>
+<p>{message}</p>
+  </div>
+</div>
+<div className="img-container">
+<img src={image} alt="kv karakter"/>
 </div>
     </div>
   );
